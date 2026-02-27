@@ -8,6 +8,8 @@
   --font-main: 'IBM Plex mono', monospace;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
-  --text-color-head: #ff0070;
+  --accent-color: #ff0070;
   --text-color-title: #DB00FF;
+  --corner-size: 10px;
+  --bg-color: #000028;
 }
