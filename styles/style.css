@@ -11,28 +11,35 @@
 .header {
   height: 100vh;
   min-block-size: 668px;
-  position: relative;
   display: grid;
-  grid-template-rows: 1fr min-content 1 fr;
+  grid-template-rows: 1fr min-content 1fr;
   grid-template-columns: 1fr;
+  align-content: space-between;
+  padding: 0 10px;
 }
 
+.corner {
+  position: relative;
+}
+
+/*Индикатор Rec */
 .header__theme-indicator {
   font-family: var(--font-main);
   font-weight: var(--font-weight-normal);
   color: var(--accent-color);
-  font-size: 25px;
+  font-size: var(--text-size);
   line-height: 1.39;
   text-transform: uppercase;
   position: absolute;
   top: 10px;
   right: 19px;
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
 }
-
+/* Лампочка */
 .header__theme-indicator::after {
   content: '';
-  display: inline-block;
-  margin-left: 10px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -45,6 +52,7 @@
   display: flex;
   flex-direction: column;
   align-items: end;
+  row-gap: 20px;
   padding-top: clamp(75px, 29.77vw - 36.64px, 192px);
   padding-right: clamp(10px, 2.545vw + 0.45px, 20px);
 }
@@ -58,9 +66,16 @@
   background-color: transparent;
   border: none;
   text-transform: lowercase;
-  letter-spacing: 2px;
-
 }
+
+.header__theme-menu-button_type_dark {
+  border: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 40%);
+  cursor: pointer;
+} 
 
 .header__title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
@@ -68,10 +83,14 @@
   font-family: var(--font-main);
   font-weight: var(--font-weight-bold);
   text-shadow: 4px 4px 0 var(--accent-color);
+  line-height: 0.83;
 }
 
 .header__text {
-  min-block-size: 117px;
+  justify-self: center;
+  line-height: 1.39;
+  align-self: end;
+  margin-bottom: 66px;
 }
 
 .title-decor {
@@ -80,11 +99,11 @@
   font-size: var(--text-size);
   font-family: var(--font-main);
   font-weight: var(--font-weight-bold);
-  line-height: 1.3;
 }
 
-.header::before,
-.header::after {
+/*Уголки общий класс*/
+.corner::before,
+.corner::after {
   content: '';
   position: absolute;
   width: 25px;
@@ -92,14 +111,14 @@
   border: 1px solid var(--accent-color);
 }
 
-.header::after {
+.corner::after {
   top: var(--corner-size);
   right: var(--corner-size);
   border-bottom: none;
   border-left: none;
 }
 
-.header::before {
+.corner::before {
   bottom: var(--corner-size);
   left: var(--corner-size);
   border-top: none;
@@ -109,6 +128,7 @@
 .problems {
   display: grid;
   gap: 20px;
+  padding: 0 10px;
 }
 
 .text-span {
@@ -119,6 +139,7 @@
 .factors {
   display: grid;
   gap: 20px;
+  padding: 0 10px;
 }
 
 .article-title {
@@ -149,6 +170,11 @@
 
 .solutions {
   display: grid;
+  padding: 0 10px
+}
+
+.picture-gallery {
+  padding: 0 10px;
 }
 
 .picture-gallery__container {
@@ -167,31 +193,9 @@
   display: grid;
   place-items: center;
   min-height: 100vh;
-  position: relative;
+  padding: 0 10px;
 }
 
-.footer::before,
-.footer::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border: 1px solid var(--accent-color);
-}
-
-.footer::after {
-  top: var(--corner-size);
-  right: var(--corner-size);
-  border-bottom: none;
-  border-left: none;
-}
-
-.footer::before {
-  bottom: var(--corner-size);
-  left: var(--corner-size);
-  border-top: none;
-  border-right: none;
-}
 
 .footer__title {
   font-size: clamp(116px, 112.18px + 1.02vw, 120px);
@@ -205,6 +209,10 @@
 
 
 @media (width >= 768px) {
+  .header {
+    padding: 0 20px;
+  }
+  
   .header__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     margin-top: clamp(173px, 173px + (273 - 173) * ((100vw - 768px) / (1024 - 768)), 273px);
@@ -213,6 +221,7 @@
   .problems {
     grid-template-columns: 1fr 2fr;
     grid-template-rows: repeat(2, min-content); 
+    padding: 0 20px;
   }
 
   .problems__title {
@@ -229,9 +238,18 @@
     margin-bottom: 0;
   }
 
+  .factors {
+    padding: 0 20px;
+  }
+
   .solutions {
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat(2, min-content); 
+    grid-template-rows: repeat(2, min-content);
+    padding: 0 20px; 
+  }
+
+  .picture-gallery {
+    padding: 0 20px;
   }
 
   .picture-gallery__container {
@@ -269,6 +287,10 @@
   .picture-gallery__image:nth-child(5) {
     grid-row: 3/4;
     grid-column: 2/4;
+  }
+
+  .footer {
+    padding: 0 20px;
   }
 
   .footer__title {
