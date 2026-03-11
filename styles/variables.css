@@ -9,9 +9,17 @@
   --font-weight-normal: 400;
   --font-weight-bold: 700;
   --accent-color: #ff0070;
+  --accent-color-text: #ff0070;
   --text-color-title: #DB00FF;
+  --text-color-subtitle: #000028;
   --text-color-paragraph: #F1B2CE;
-  --corner-size: 10px;
+  --corner-size: 10px; /*расстояние уголков*/
   --bg-color: #000028;
   --text-size: 18px;
+}
+
+@media (width >= 768px) {
+  :root {
+    --corner-size: 20px;
+  }
 }
