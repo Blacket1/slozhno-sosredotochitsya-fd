@@ -148,6 +148,20 @@
   margin-top: clamp(40px, 5.08vw + 20.9px, 60px);
 }
 
+.article-container__subtitle {
+  background-color: var(--accent-color);
+  color: var(--text-color-subtitle);
+  font-size: var(--text-size);
+  font-family: var(--font-main);
+  font-weight: var(--font-weight-bold);
+}
+
+h4.list-title {
+  font-weight: var(--font-weight-normal);
+  line-height: 1.3;
+  margin-top: 20px;
+}
+
 .text-link {
   text-shadow: 1px 2px 0 var(--accent-color);
   text-decoration: none;
@@ -186,18 +200,6 @@
   font-size: var(--text-size);
   font-family: var(--font-main);
   padding-top: 10px;
-  padding-bottom: 20px;
-}
-
-.solutions__list-item-title {
-  color: var(--text-color-subtitle);
-  font-size: var(--text-size);
-  font-family: var(--font-main);
-  font-weight: var(--font-weight-normal);
-  line-height: 1.3;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  background-color: var(--accent-color);
 }
 
 .solutions {
