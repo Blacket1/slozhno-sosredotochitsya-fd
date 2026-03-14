@@ -13,13 +13,6 @@
   --text-color-title: #DB00FF;
   --text-color-subtitle: #000028;
   --text-color-paragraph: #F1B2CE;
-  --corner-size: 10px; /*расстояние уголков*/
   --bg-color: #000028;
   --text-size: 18px;
-}
-
-@media (width >= 768px) {
-  :root {
-    --corner-size: 20px;
-  }
 }
